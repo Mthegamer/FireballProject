@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityProjects", "UnityProjects\UnityProjects.csproj", "{034A9C1E-C823-436A-866A-1C4261364FC9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Master|ARM = Master|ARM
+		Master|x86 = Master|x86
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{034A9C1E-C823-436A-866A-1C4261364FC9}.Debug|ARM.ActiveCfg = Debug|ARM
+		{034A9C1E-C823-436A-866A-1C4261364FC9}.Debug|ARM.Build.0 = Debug|ARM
+		{034A9C1E-C823-436A-866A-1C4261364FC9}.Debug|ARM.Deploy.0 = Debug|ARM
+		{034A9C1E-C823-436A-866A-1C4261364FC9}.Debug|x86.ActiveCfg = Debug|x86
+		{034A9C1E-C823-436A-866A-1C4261364FC9}.Debug|x86.Build.0 = Debug|x86
+		{034A9C1E-C823-436A-866A-1C4261364FC9}.Debug|x86.Deploy.0 = Debug|x86
+		{034A9C1E-C823-436A-866A-1C4261364FC9}.Master|ARM.ActiveCfg = Master|ARM
+		{034A9C1E-C823-436A-866A-1C4261364FC9}.Master|ARM.Build.0 = Master|ARM
+		{034A9C1E-C823-436A-866A-1C4261364FC9}.Master|ARM.Deploy.0 = Master|ARM
+		{034A9C1E-C823-436A-866A-1C4261364FC9}.Master|x86.ActiveCfg = Master|x86
+		{034A9C1E-C823-436A-866A-1C4261364FC9}.Master|x86.Build.0 = Master|x86
+		{034A9C1E-C823-436A-866A-1C4261364FC9}.Master|x86.Deploy.0 = Master|x86
+		{034A9C1E-C823-436A-866A-1C4261364FC9}.Release|ARM.ActiveCfg = Release|ARM
+		{034A9C1E-C823-436A-866A-1C4261364FC9}.Release|ARM.Build.0 = Release|ARM
+		{034A9C1E-C823-436A-866A-1C4261364FC9}.Release|ARM.Deploy.0 = Release|ARM
+		{034A9C1E-C823-436A-866A-1C4261364FC9}.Release|x86.ActiveCfg = Release|x86
+		{034A9C1E-C823-436A-866A-1C4261364FC9}.Release|x86.Build.0 = Release|x86
+		{034A9C1E-C823-436A-866A-1C4261364FC9}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
