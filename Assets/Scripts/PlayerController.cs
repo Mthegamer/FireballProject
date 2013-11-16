@@ -3,12 +3,15 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
+	public int Lives = 3;
 	public bool IsWon = false;
 	public bool GodMode = true;
 	public GUIText ScoreText;
 	public GUIText ScoreTextShadow;
 	public GUIText WinText;
 	public GUIText WinTextShadow;
+	public GUIText LivesText;
+	public GUIText LivesTextShadow;
 	public int Score = 0;
 	public float JumpSpeed = 400f;
 	public float speed;
@@ -18,6 +21,16 @@ public class PlayerController : MonoBehaviour
 	{
 		WinText.text = "";
 		WinTextShadow.text = WinText.text;
+		LivesText.text = "Lives:" + Lives.ToString();
+		LivesTextShadow.text = LivesText.text;
+	}
+
+	void Update ()
+	{
+		if (rigidbody.position.y < -100)
+		{
+			Death();
+		}
 	}
 
 	void FixedUpdate ()
@@ -64,4 +77,23 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
+	void Death ()
+	{
+		Lives --;
+		rigidbody.MovePosition(new Vector3(0, 0.5f, 0));
+		rigidbody.velocity = Vector3.zero;
+		rigidbody.angularVelocity = Vector3.zero;
+		WinText.text = "Ouchies!";
+		WinTextShadow.text = WinText.text;
+		LivesText.text = "Lives:" + Lives.ToString();
+		LivesTextShadow.text = LivesText.text;
+		StartCoroutine(HideText());
+	}
+
+	IEnumerator HideText()
+	{
+		yield return new WaitForSeconds(3.0f);
+		WinText.text = "";
+		WinTextShadow.text = WinText.text;
+	}
 }

@@ -265,6 +265,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1340137134}
+  - {fileID: 1649600846}
   - {fileID: 1420917047}
   - {fileID: 351512444}
   - {fileID: 1464504997}
@@ -784,7 +786,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 351512444}
   - 132: {fileID: 351512445}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -798,7 +800,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 351512443}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 119148326}
@@ -908,12 +910,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ffe8e78503f4d54e83fd6290c1a73bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Lives: 3
   IsWon: 0
   GodMode: 1
   ScoreText: {fileID: 351512445}
   ScoreTextShadow: {fileID: 1464504998}
   WinText: {fileID: 1420917048}
   WinTextShadow: {fileID: 1926474321}
+  LivesText: {fileID: 1340137135}
+  LivesTextShadow: {fileID: 1649600845}
   Score: 0
   JumpSpeed: 400
   speed: 500
@@ -2101,6 +2106,7 @@ GameObject:
   - 124: {fileID: 1158613762}
   - 81: {fileID: 1158613761}
   - 114: {fileID: 1158613766}
+  - 45: {fileID: 1158613767}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2138,7 +2144,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: .502865493, g: .681898177, b: .963235319, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -2181,6 +2187,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 435198269}
+--- !u!45 &1158613767
+Skybox:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1158613760}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 53412155bc1016547b1a77b2333c0380, type: 2}
 --- !u!1 &1181625770
 GameObject:
   m_ObjectHideFlags: 0
@@ -2556,6 +2570,56 @@ Transform:
   - {fileID: 827743108}
   - {fileID: 1043180856}
   m_Father: {fileID: 0}
+--- !u!1 &1340137133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1340137134}
+  - 132: {fileID: 1340137135}
+  m_Layer: 0
+  m_Name: LivesText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1340137134
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1340137133}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .99000001, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 119148326}
+--- !u!132 &1340137135
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1340137133}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: Lives:3
+  m_Anchor: 2
+  m_Alignment: 0
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 20
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
 --- !u!1001 &1340480656
 Prefab:
   m_ObjectHideFlags: 0
@@ -2816,7 +2880,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1420917047}
   - 132: {fileID: 1420917048}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WinText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2830,7 +2894,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1420917046}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .5, y: .899999976, z: 0}
+  m_LocalPosition: {x: .5, y: .899999976, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 119148326}
@@ -2866,7 +2930,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1464504997}
   - 132: {fileID: 1464504998}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ScoreTextShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3040,6 +3104,56 @@ Prefab:
   m_RootGameObject: {fileID: 536746456}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1649600844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1649600846}
+  - 132: {fileID: 1649600845}
+  m_Layer: 0
+  m_Name: LivesTextShadow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!132 &1649600845
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1649600844}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: Lives:3
+  m_Anchor: 2
+  m_Alignment: 0
+  m_PixelOffset: {x: 2, y: -2}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 20
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 2147483648
+  m_PixelCorrect: 1
+  m_RichText: 1
+--- !u!4 &1649600846
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1649600844}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .99000001, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 119148326}
 --- !u!1 &1684672575
 GameObject:
   m_ObjectHideFlags: 0
@@ -3469,7 +3583,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1926474322}
   - 132: {fileID: 1926474321}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WinTextShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
