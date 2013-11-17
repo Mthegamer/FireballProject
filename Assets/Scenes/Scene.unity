@@ -214,7 +214,7 @@ EllipsoidParticleEmitter:
   minSize: 1
   maxSize: 1
   minEnergy: 1
-  maxEnergy: 1
+  maxEnergy: 2
   minEmission: 20
   maxEmission: 40
   worldVelocity: {x: 0, y: 0, z: 0}
@@ -897,6 +897,7 @@ Transform:
   m_LocalPosition: {x: 0, y: .5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 542367384}
   - {fileID: 24149717}
   m_Father: {fileID: 0}
 --- !u!114 &435198274
@@ -1162,6 +1163,91 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1587545024}
   m_GameObject: {fileID: 536746456}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &542367378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 542367384}
+  - 20: {fileID: 542367383}
+  - 124: {fileID: 542367382}
+  - 92: {fileID: 542367381}
+  - 114: {fileID: 542367379}
+  m_Layer: 0
+  m_Name: First Person
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &542367379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 542367378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23cfd0e4fe0d68d4096eb0b039459845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 435198269}
+--- !u!92 &542367381
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 542367378}
+  m_Enabled: 1
+--- !u!124 &542367382
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 542367378}
+  m_Enabled: 1
+--- !u!20 &542367383
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 542367378}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: .300000012
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_HDR: 0
+  m_OcclusionCulling: 1
+--- !u!4 &542367384
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 542367378}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 435198273}
 --- !u!1001 &570543649
 Prefab:
   m_ObjectHideFlags: 0
@@ -2106,7 +2192,6 @@ GameObject:
   - 124: {fileID: 1158613762}
   - 81: {fileID: 1158613761}
   - 114: {fileID: 1158613766}
-  - 45: {fileID: 1158613767}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2187,14 +2272,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 435198269}
---- !u!45 &1158613767
-Skybox:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1158613760}
-  m_Enabled: 1
-  m_CustomSkybox: {fileID: 2100000, guid: 53412155bc1016547b1a77b2333c0380, type: 2}
 --- !u!1 &1181625770
 GameObject:
   m_ObjectHideFlags: 0
@@ -2361,10 +2438,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1500000, guid: 7b277829b0b4991f100024a80dbc5c14, type: 2}
       propertyPath: maxEnergy
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1500000, guid: 7b277829b0b4991f100024a80dbc5c14, type: 2}
       propertyPath: minEnergy
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200000, guid: 7b277829b0b4991f100024a80dbc5c14, type: 2}
+      propertyPath: autodestruct
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
